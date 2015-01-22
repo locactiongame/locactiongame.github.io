@@ -1,0 +1,30 @@
+<div class="row" style="padding:10px">
+
+	<div class="col-md-2 col-sm-3">
+		<div class="cover square" 
+		style="background-image:url(http://avatars.io/{{user.social}}/{{user.nickname}}?size=large)"></div>
+	
+	<input type="text" ng-model="user.nickname" placeholder="{{user.social}} nickname" class="form-control">
+
+	Click on the social icon to update your avatar with given nickname
+
+	<div class='text-center avatarpick' ng-click="updateAvatar()">
+		<span class="fa-stack fa-lg" ng-click="user.social='facebook'">
+		  <i class="fa fa-square-o fa-stack-2x"></i>
+		  <i class="fa fa-facebook fa-stack-1x"></i>
+		</span>
+		<span class="fa-stack fa-lg" ng-click="user.social='twitter'">
+		  <i class="fa fa-square-o fa-stack-2x"></i>
+		  <i class="fa fa-twitter fa-stack-1x"></i>
+		</span>
+		<span class="fa-stack fa-lg" ng-click="user.social='instagram'">
+		  <i class="fa fa-square-o fa-stack-2x"></i>
+		  <i class="fa fa-instagram fa-stack-1x"></i>
+		</span>
+	</div>
+
+	</div>
+	<div class="col-md-8 col-sm-9">
+		<h4>{{user.username}}</h4>
+	</div>
+</div>

@@ -1,0 +1,41 @@
+<div id="registerForm" class="cover cover-screen" style="background-image:url(assets/kirmiziyer.jpg);">
+<div class="row">
+<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+	
+	<form ng-submit="register()" style="padding:10px;
+	background:rgba(255, 255, 255, 0.35)">
+		<div>
+			<a href="#/" style="color:#FFF"><i class="fa fa-arrow-circle-o-left" style="font-size:24px"></i></a>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<input type="text" ng-model="username" placeholder="Username" class="form-control"required >
+			</div>
+
+			<div class="col-xs-12">
+				<input type="text" ng-model="email" placeholder="Email" class="form-control" required >
+			</div>
+			<div class="col-xs-12">
+				<input type="password" ng-model="password" placeholder="Password" class="form-control" 
+				required >
+			</div>
+
+			<div class="col-xs-12" style="padding-top:10px">
+				<div class="row">
+					<div class="col-xs-6">
+						<input type="checkbox" ng-model="agreement">
+						I accept the<a href="#"> User Agreement</a> 
+					</div>
+					<div class="col-xs-6 text-right">
+						<button class="btn btn-success">
+							Register
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+</div>
+</div>
+

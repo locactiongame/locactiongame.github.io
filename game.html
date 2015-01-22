@@ -1,0 +1,30 @@
+<i ng-init="table('missions')"></i>
+<i ng-init="table('locations')"></i>
+
+
+<map zoom="13" 
+  center="[38.406879, 27.103937]" 
+  disable-default-u-i="true"
+  disable-double-click-zoom="true"
+  draggable="true"
+  dragging-cursor="move"
+  keyboard-shortcuts="false"
+  max-zoom="22"
+  min-zoom="4"
+  tilt="45"
+  style="height:100%">
+	
+	<div ng-repeat="mission in missions">
+		<div ng-repeat="location in locations" ng-if="mission.location_start[0] == location._id">
+			<marker
+		      position="[{{location.lat}},{{location.lng}}]"
+		      draggable="false"
+		      visible="true"
+		      on-click="showMission(mission)"
+		      ></marker>
+		</div>
+		
+	</div>
+
+</map>
+
