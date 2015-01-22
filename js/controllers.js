@@ -222,22 +222,17 @@ app.controller("gameControllers",function($scope,$rootScope,ngDialog){
 		@for gameControllers
 		@param locationID {String}
 	*/
-	$scope.checkin = function(locationID){
+	$scope.checkin = function(locationID,mission){
+
 		$scope.user.location = locationID;
-		core.updateUser($scope.user,function(r){
-			alert("Checked in to the place!","success");
+		core.updateUser($scope.user)
+
+		core.usersInLocation(locationID,function(a){
+			console.log(a.length,"Mission : ",mission)
 		})
-	}
-
-	/**
-		Fetches all users checked into the place
-		@method usersInLocation
-		@for gameControllers
-		@param locationID {String}
-	*/	
-	$scope.usersInLocation = function(locationID){
 
 	}
+
 
 	/**
 		Triggers will be here
@@ -249,8 +244,14 @@ app.controller("gameControllers",function($scope,$rootScope,ngDialog){
 		@method invade
 		@param missionID {String}
 	*/
-	$scope.invade = function(missionID){
+	$scope.invade = function(locationID,mission){
 		//Get users checked in to the location
+		core.usersInLocation(locationID,function(users){
+			if(mission.invaderNum > users.length){
+				var left = mission.invaderNum - users.length;
+				alert(left+" players left to invade the spot!");
+			}
+		})
 		
 	}
 

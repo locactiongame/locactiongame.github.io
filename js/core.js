@@ -303,8 +303,14 @@ var core = {
 		@method usersInLocation
 		@param locationID
 	*/
-	usersInLocation : function(locationID){
-		
+	usersInLocation : function(locationID,callback){
+		var query = new Kinvey.Query();
+		query.equalTo('location', locationID);
+		var promise = Kinvey.User.find(query, {
+		    success  : function(response) {
+		        callback(response)
+		    }
+		});
 	}
 }
 

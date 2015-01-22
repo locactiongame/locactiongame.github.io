@@ -1,7 +1,7 @@
 <div ng-repeat="location in locations" ng-if="location._id == mission.location_start[0]">
 	
 	<!-- Click on the arrow to chekin to the place -->
-	<h1> <i class="fa fa-location-arrow" ng-click="checkin(location._id)"></i> {{mission.title}}</h1>
+	<h1> <i class="fa fa-location-arrow" ng-click="checkin(location._id,mission)"></i> {{mission.title}}</h1>
 
 	<i ng-init="table('locations')"></i>
 	<div ng-bind-html="mission.description"></div>
@@ -29,7 +29,10 @@
 	</div>
 
 	<div ng-if="mission.type=='invade'">
-		<button class="btn btn-primary fullwidth" ng-click="invade(mission._id)">INVADE</button>
+		<button class="btn btn-primary fullwidth" ng-click="invade(location._id,mission)">INVADE</button>
+	</div>
+	<div ng-if="mission.type=='delivery'">
+		<button class="btn btn-primary fullwidth" ng-click="deliver()">Deliver Item </button>
 	</div>
 </div>
 	
